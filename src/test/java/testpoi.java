@@ -1,10 +1,8 @@
 import com.woniu.serviceImpl.PoiServiceImpl;
+import com.woniu.serviceImpl.WritePoi;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,5 +19,11 @@ public class testpoi {
          for(String[] strings:list){
              System.out.println(Arrays.toString(strings));
          }
+
+        System.out.println("======================================");
+
+        WritePoi writePoi=new WritePoi();
+        FileOutputStream fileOutputStream=new FileOutputStream("E:\\web\\workspace\\poi\\write.xls");
+        writePoi.parsExcel(fileOutputStream);
     }
 }
